@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "agencias",
+  "info": {
+    "name": "agencia",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "acronimo": {
+      "type": "string"
+    },
+    "direccion": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "imagen": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "descripcion": {
+      "type": "string"
+    },
+    "programas": {
+      "collection": "programa"
+    },
+    "categoria": {
+      "model": "category"
+    }
+  }
+}
